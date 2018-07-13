@@ -16,15 +16,16 @@ int main()
 
 void per(char *s,int l,int r)
 {
+    int i;
     if(l==r)
-        cout<<s;
+        cout<<s<<endl;
     else
     {
-        for(int i=l;i<=r;i++)
+        for(i=l;i<=r;i++)
         {
             swap(s+l,s+i);
             per(s,l+1,r);
-            swap(s+1,s+i);
+            swap(s+l,s+i);
         }
     }
 
