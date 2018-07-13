@@ -15,13 +15,13 @@ int main()
 }
 void per(char *s)
 {
-    int n,i;
+    int n,i,x=1;
     n=strlen(s);
     sort(s,s+n);
     bool isfinished=false;
     while(!isfinished)
     {
-        cout<<s<<endl;
+        cout<<x++<<" "<<s<<endl;
         for(i=n-2;i>=0;i--)
             if(s[i]<s[i+1])
                 break;
@@ -42,7 +42,7 @@ int next(char *s,char a,int l,int h)
 {
     int index=l,i;
     for(i=l;i<h;i++)
-        if(s[i]>s[l] && s[i]<s[index])
+        if(s[i]>a && s[i]<s[index])
             index=i;
     return index;
 }
