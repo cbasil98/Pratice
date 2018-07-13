@@ -1,19 +1,20 @@
 #include <bits/stdc++.h>
-void per(string,int,int);
+void per(char *,int,int);
 void swap(char *,char *);
 using namespace std;
 
 int main()
 {
-    string s;int n;
+    char s[10];
+    int n;
     cin>>s;
-    n=strlen(s,0,n-1);
-    per(s);
+    n=strlen(s);
+    per(s,0,n-1);
 
     return 0;
 }
 
-void per(string s,int l,int r)
+void per(char *s,int l,int r)
 {
     if(l==r)
         cout<<s;
@@ -22,12 +23,13 @@ void per(string s,int l,int r)
         for(int i=l;i<=r;i++)
         {
             swap(s+l,s+i);
-            per(s,,l+1,r);
+            per(s,l+1,r);
             swap(s+1,s+i);
         }
+    }
 
 }
-void swap(char *x.char *y)
+void swap(char *x,char *y)
 {
     char temp;
     temp= *x;
